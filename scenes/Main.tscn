@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/planets/PlanetManager.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node2D"]
+
+[node name="Game_World" type="Node2D" parent="."]
+
+[node name="Background" type="Node2D" parent="Game_World"]
+
+[node name="ColorRect" type="ColorRect" parent="Game_World/Background"]
+margin_left = -20.5243
+margin_top = -17.9405
+margin_right = 1053.48
+margin_bottom = 619.059
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlanetManager" parent="Game_World" instance=ExtResource( 4 )]
+seed_value = -88549.6
+
+[node name="PlanetManager4" parent="Game_World" instance=ExtResource( 4 )]
+position = Vector2( 0, 300 )
+seed_value = 51908.4
+
+[node name="PlanetManager2" parent="Game_World" instance=ExtResource( 4 )]
+position = Vector2( 350, 0 )
+seed_value = -67175.6
+
+[node name="PlanetManager5" parent="Game_World" instance=ExtResource( 4 )]
+position = Vector2( 350, 300 )
+seed_value = 85496.2
+
+[node name="PlanetManager3" parent="Game_World" instance=ExtResource( 4 )]
+position = Vector2( 700, 0 )
+seed_value = 131298.0
+
+[node name="PlanetManager6" parent="Game_World" instance=ExtResource( 4 )]
+position = Vector2( 700, 300 )
+seed_value = -181679.0
+
+[node name="GUI" type="Node2D" parent="."]

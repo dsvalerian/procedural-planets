@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://shaders/planets/terrestrial/terrestrial_planet.shader" type="Shader" id=1]
+[ext_resource path="res://scenes/planets/terrestrial/TerrestrialPlanet.gd" type="Script" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.0148148, 0.229167, 0.432292, 0.661458, 0.807292 )
+colors = PoolColorArray( 0.777344, 0.516205, 0.516205, 1, 1, 0.0664063, 0.0664063, 1, 1, 1, 1, 1, 0.519531, 0.144089, 0.425671, 1, 0.03125, 0.0690918, 1, 1, 0, 1, 0.507813, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 1 )
+shader_param/seed = 4
+shader_param/num_pixels = 80.0
+shader_param/spin_speed = 0.252
+shader_param/rotation = 6.28
+shader_param/shadow_color = Plane( 0.5, 0.5, 0.5, 1 )
+shader_param/light_origin = Vector2( 0.429, 0.398 )
+shader_param/light_border = 0.361
+shader_param/colors = SubResource( 2 )
+
+[node name="TerrestrialPlanet" type="Node2D" groups=[
+"planets",
+]]
+script = ExtResource( 2 )
+planet_size_range = Vector2( 175, 300 )
+planet_rotation_range = Vector2( -4, 4 )
+light_origin_range = Vector2( 0.4, 0.6 )
+light_border_range = Vector2( 0.35, 0.4 )
+spin_speed_range = Vector2( 0.05, 0.5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 3 )
+margin_right = 300.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
