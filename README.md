@@ -8,4 +8,4 @@ The shader code is written in Godot's shading language, but it is similar enough
 
 ## Usage
 - Import, open, and run the project through Godot
-- Hit the spacebar to generate new planets
+- Hit the spacebar to generate a new set of planets
